@@ -1,7 +1,7 @@
 /*
 Controller for clock/time webapp
-Jiahua Chen, based off Eric Li's original design
-Last updated 23 Feb 2019
+Jiahua Chen and Nicholas Lorentzen, based off Eric Li's original design
+Last updated 25 Feb 2019
 */
 
 // Gets the current date and time
@@ -13,12 +13,15 @@ var d = new Date();
 
 function updateD()
 {
+	"use strict";
 	d = new Date();
 }
 
 // Gets the classification of the date, and returns 0 if it is a normal day. Also contains dictionaries for special days.
 function dayType()
 {
+	"use strict";
+	
 	// Defines the special days
 	var specialDays = [new calDay(1,1), new calDay(2,22)];
 	var noClassSats = [new calDay(2,1)];
@@ -27,7 +30,7 @@ function dayType()
 
 	for (var i = 0; i < specialDays.length; i++)
 	{
-		if (specialDays[i].month == d.getMonth() && specialDays[i].date == d.getDate()) { return 1; }
+		if (specialDays[i].month === d.getMonth() && specialDays[i].date === d.getDate()) { return 1; }
 		// console.log(" *** specialDays[i].month " + specialDays[i].month);
 		// console.log(" *** specialDays[i].date " + specialDays[i].date);
 		// console.log(" *** dayType specialDays " + i);
@@ -35,19 +38,19 @@ function dayType()
 
 	for (i = 0; i < noClassSats.length; i++)
 	{
-		if (noClassSats[i].month == d.getMonth() && noClassSats[i].date == d.getDate()) { return 2; }
+		if (noClassSats[i].month === d.getMonth() && noClassSats[i].date === d.getDate()) { return 2; }
 		// console.log(" *** dayType noClassSats " + i);
 	}
 
 	for (i = 0; i < noClasses.length; i++)
 	{
-		if (noClasses[i].month == d.getMonth() && noClasses[i].date == d.getDate()) { return 3; }
+		if (noClasses[i].month === d.getMonth() && noClasses[i].date === d.getDate()) { return 3; }
 		// console.log(" *** dayType noClasses " + i);
 	}
 
 	for (i = 0; i < holiday.length; i++)
 	{
-		if (holiday[i].month == d.getMonth() && holiday[i].date == d.getDate()) { return 4; }
+		if (holiday[i].month === d.getMonth() && holiday[i].date === d.getDate()) { return 4; }
 		// console.log(" *** dayType holiday " + i);
 	}
 
@@ -56,6 +59,8 @@ function dayType()
 
 function loadTime()
 {
+	"use strict";
+	
 	// Adjusts into AM and PM time
 	var hr = ((d.getHours() + 11) % 12 + 1);
 	var sufx = (d.getHours() >= 12)? 'PM' : 'AM';
@@ -66,6 +71,8 @@ function loadTime()
 
 function loadDate()
 {
+	"use strict";
+	
 	// Dictionary for text-based date
 	var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -92,7 +99,7 @@ function period(title, startHr, startMin, endHr, endMin)
 }
 
 function calDay(month, date)
-{
+{	
 	this.date = date;
 	this.month = month - 1;
 }
@@ -100,16 +107,17 @@ function calDay(month, date)
 // Updates the clock messages
 function update()
 {
+	
 	// Stores the dayType
 	var type = dayType();
 	// Debug ***
 	// document.getElementById("debug").innerHTML = type;
 	// Checks for special days
-	if (type == 1) { specialSchedule(); }
-	else if (type == 2) { noClassSat(); }
-	else if (type == 3) { noClasses(); }
-	else if (type == 4) { holiday(); }
-	else if (type == 0)
+	if (type === 1) { specialSchedule(); }
+	else if (type === 2) { noClassSat(); }
+	else if (type === 3) { noClasses(); }
+	else if (type === 4) { holiday(); }
+	else if (type === 0)
 	{
 		// console.log(" *** Is normal day");
 		// Gets today's schedule
@@ -249,7 +257,7 @@ function noClasses()
 function holiday()
 {
 	document.getElementById("currentEvent").innerHTML = "Enjoy your holiday!";
-	document.getElementById("nextEvent").innerHTML = "";
+	document.getElementById("nextEvent").innerHTML = "Clock will resume soon.";
 }
 
 function normalDay(nowTitle, nowDiff, nextTitle, nextDiff)
