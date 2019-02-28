@@ -309,7 +309,7 @@ function rawToString(raw)
 	if (toMins(raw) <= 5)
 		{
 		if (toMins(raw) == 1) { return toMins(raw) + " minute " + toSecs(raw) + " seconds"; }
-		else { return toMins(raw) + " minutes" + toSecs(raw) + " seconds"; }
+		else { return toMins(raw) + " minutes " + toSecs(raw) + " seconds"; }
 		}
 	
 	if (toHrs(raw) == 0)
