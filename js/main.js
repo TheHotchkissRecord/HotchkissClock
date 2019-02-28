@@ -5,8 +5,8 @@ Last updated 25 Feb 2019
 */
 
 // Gets the current date and time
-var d = new Date();
-//var d = new Date(2019,1,4,7,28,1,1);
+//var d = new Date();
+var d = new Date(2019,1,4,7,28,1,1);
 //console.log(" *** d.getDate() " + d.getDate());
 //console.log(" *** d.getMonth() " + d.getMonth());
 //console.log(" *** dayType noClassSats" + i);
@@ -14,8 +14,8 @@ var d = new Date();
 function updateD()
 {
 	"use strict";
-	d = new Date();
-	//d = new Date(2019,1,28,8,29,1,1);
+	//d = new Date();
+	d = new Date(2019,1,28,8,27,1,1);
 }
 
 // Gets the classification of the date, and returns 0 if it is a normal day. Also contains dictionaries for special days.
@@ -156,7 +156,7 @@ function update()
 					normalDay(currentSchedule[i].title, currentSchedule[i].endRaw - parseRaw(), currentSchedule[i + 2].title, currentSchedule[i + 2].startRaw - parseRaw());
 				}
 			}
-			if (parseRaw() > currentSchedule[currentSchedule.length - 1].endRaw) { document.getElementById("currentEvent").innerHTML = "Have a nice day!"; }
+			if (parseRaw() > currentSchedule[currentSchedule.length - 1].endRaw) { document.getElementById("currentEvent").innerHTML = "Nothing Else Today"; }
 		}
 	}
 }
@@ -296,7 +296,7 @@ function toHrs(raw)
 
 function toSecs(raw)
 {
-	return Math.ceil((raw % 3600));
+	return Math.ceil((raw % 3600) % 60);
 }
 
 function rawToString(raw)
