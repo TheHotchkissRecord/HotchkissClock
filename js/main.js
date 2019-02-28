@@ -5,16 +5,17 @@ Last updated 25 Feb 2019
 */
 
 // Gets the current date and time
-var d = new Date();
-// var d = new Date(2019,1,4,7,28,01,0);
-// console.log(" *** d.getDate() " + d.getDate());
-// console.log(" *** d.getMonth() " + d.getMonth());
-// console.log(" *** dayType noClassSats" + i);
+//var d = new Date();
+var d = new Date(2019,1,4,7,28,1,1);
+//console.log(" *** d.getDate() " + d.getDate());
+//console.log(" *** d.getMonth() " + d.getMonth());
+//console.log(" *** dayType noClassSats" + i);
 
 function updateD()
 {
 	"use strict";
-	d = new Date();
+	//d = new Date();
+	d = new Date(2019,1,28,8,29,1,1);
 }
 
 // Gets the classification of the date, and returns 0 if it is a normal day. Also contains dictionaries for special days.
@@ -67,6 +68,11 @@ function loadTime()
 
 	// Outputs to HTML
 	document.getElementById("clock").innerHTML = hr + ":" + ("0" + d.getMinutes()).slice(-2) + " " + sufx;
+	
+	//Test Code
+	//var hr = ((d.setHours(8) + 11) % 12 + 1);
+	//var sufx = (d.setHours(8) >= 12)? 'PM' : 'AM';
+	//document.getElementById("clock").innerHTML = hr + ":" + ("0" + d.setMinutes(29)).slice(-2) + " " + sufx;
 }
 
 function loadDate()
@@ -78,7 +84,10 @@ function loadDate()
 	var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 	// Outputs to HTML
-	document.getElementById("date").innerHTML = days[d.getDay()] + ", " + months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+	document.getElementById("date").innerHTML = days[d.getDay()] + ", " + months[d.getMonth()] + " " + d.getDate();
+	
+	//Test Code
+	//document.getElementById("date").innerHTML = days[d.setDay(29)] + ", " + months[d.setMonth(1)] + " " + d.setDate(2019);
 }
 
 // Below mostly code from Eric Li '13
@@ -125,7 +134,7 @@ function update()
 		// console.log(" *** currentSchedule " + currentSchedule.length);
 
 		// Checks which period it currently is
-		for (i = 0; i < currentSchedule.length; i++)
+		for (var i = 0; i < currentSchedule.length; i++)
 		{
 			// console.log(" *** for i " + i);
 			// console.log(" *** parseRaw " + parseRaw());
@@ -150,7 +159,6 @@ function update()
 			if (parseRaw() > currentSchedule[currentSchedule.length - 1].endRaw) { document.getElementById("currentEvent").innerHTML = "Have a nice day!"; }
 		}
 	}
-	else {}
 }
 
 // Gets the right schedule for a regular class day
@@ -189,8 +197,8 @@ function getSchedule()
 		currentSchedule[0] = new period("Period 1", 8, 30, 9, 10);
 		currentSchedule[1] = new period("Passing Period", 9, 10, 9, 15);
 		currentSchedule[2] = new period("Period 2", 9, 15, 9, 55);
-		currentSchedule[3] = new period("Passing Period", 9, 55, 10, 00);
-		currentSchedule[4] = new period("Auditorium",  10, 00, 10, 35);
+		currentSchedule[3] = new period("Passing Period", 9, 55, 10, 0);
+		currentSchedule[4] = new period("Auditorium",  10, 0, 10, 35);
 		currentSchedule[5] = new period("Passing Period", 10, 35, 10, 40);
 		currentSchedule[6] = new period("Period 3", 10, 40, 11, 20);
 		currentSchedule[7] = new period("Passing Period", 11, 20, 11, 25);
@@ -278,7 +286,7 @@ function parseRaw()
 
 function toMins(raw)
 {
-	return Math.ceil((raw % 3600) / 60);
+	return Math.floor((raw % 3600) / 60);
 }
 
 function toHrs(raw)
@@ -286,8 +294,18 @@ function toHrs(raw)
 	return Math.floor(raw / 3600);
 }
 
+function toSecs(raw)
+{
+	return Math.ceil((raw % 3600));
+}
+
 function rawToString(raw)
 {
+	if (toMins(raw) == 0)
+	{
+		if (toSecs(raw) == 1) { return toSecs(raw) + " second"; }
+		else { return toMins(raw) + " seconds"; }
+	}
 	if (toHrs(raw) == 0)
 	{
 		if (toMins(raw) == 1) { return toMins(raw) + " minute"; }
@@ -306,7 +324,7 @@ function rawToString(raw)
 
 }
 
-setInterval(loadTime, 1000);
-setInterval(loadDate, 1000);
+setInterval(loadTime, 500);
+setInterval(loadDate, 2000);
 setInterval(updateD, 1000);
 setInterval(update, 1000);
