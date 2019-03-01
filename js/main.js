@@ -314,6 +314,7 @@ function rawToString(raw)
 			if (toMins(raw) == 1) { return toMins(raw) + " minute " + toSecs(raw) + " seconds"; }
 			else { return toMins(raw) + " minutes " + toSecs(raw) + " seconds"; }
 		}
+		return toMins(raw) + " minutes";
 	}
 	else if (toHrs(raw) == 1)
 	{
