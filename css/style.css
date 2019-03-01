@@ -13,6 +13,8 @@
   border: 2px solid #FFFFFF;
   padding: 25px;
   margin: auto;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 #date, #currentEvent, #nextEvent
@@ -38,7 +40,7 @@
   bottom: 5px;
   right: 5px;
   font-family: 'Lato', sans-serif;
-  color: LightBlue;
+  color: #FFFFFF;
 }
 
 @keyframes bgcolor {
