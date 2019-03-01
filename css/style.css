@@ -42,8 +42,31 @@
   color: LightBlue;
 }
 
+@keyframes bgcolor {
+    0% {
+        background-color: #1C5DCE
+    }
+
+    30% {
+        background-color: #191445
+    }
+
+    60% {
+        background-color: #82C6F7
+    }
+
+    90% {
+        background-color: #33FFF5
+    }
+
+    100% {
+        background-color: #332B78
+    }
+}
+
 body {
-  background-image: url("images/gears.png");
-  background-repeat: repeat;
-  background-size: 1920px 1080px;
+    -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
 }
