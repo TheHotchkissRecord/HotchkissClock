@@ -5,13 +5,12 @@
   position: relative;
   top: 10vh;
   text-align: center;
-  color: navy;
+  color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
   font-size: 5em;
   height: 100;
-  margin: 0;
   width: 350px;
-  border: 2px solid navy;
+  border: 2px solid #FFFFFF;
   padding: 25px;
   margin: auto;
 }
@@ -24,7 +23,7 @@
   text-align: center;
   font-size: 2em;
   padding: 5px;
-  color: navy;
+  color: #FFFFFF;
 }
 
 #date
@@ -44,29 +43,29 @@
 
 @keyframes bgcolor {
     0% {
-        background-color: #1C5DCE
+        background-color: #8899FF
     }
 
     30% {
-        background-color: #191445
+        background-color: #88A8FF
     }
 
     60% {
-        background-color: #82C6F7
+        background-color: #88E6FF
     }
 
     90% {
-        background-color: #33FFF5
+        background-color: #88A8FF
     }
 
     100% {
-        background-color: #332B78
+        background-color: #8899FF
     }
 }
 
 body {
-    -webkit-animation: bgcolor 20s infinite;
-    animation: bgcolor 10s infinite;
+    -webkit-animation: bgcolor 60s infinite;
+    animation: bgcolor 30s infinite;
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }

@@ -301,22 +301,19 @@ function toSecs(raw)
 
 function rawToString(raw)
 {
-	if (toMins(raw) == 0)
-	{
-		if (toSecs(raw) == 1) { return toSecs(raw) + " second"; }
-		else { return toSecs(raw) + " seconds"; }
-	}
-	
-	if (toMins(raw) < 5)
-		{
-		if (toMins(raw) == 1) { return toMins(raw) + " minute " + toSecs(raw) + " seconds"; }
-		else { return toMins(raw) + " minutes " + toSecs(raw) + " seconds"; }
-		}
-	
 	if (toHrs(raw) == 0)
-	{
-		if (toMins(raw) == 1) { return toMins(raw) + " minute"; }
-		else { return toMins(raw) + " minutes"; }
+	{	
+		if (toMins(raw) == 0)
+		{
+			if (toSecs(raw) == 1) { return toSecs(raw) + " second"; }
+			else { return toSecs(raw) + " seconds"; }
+		}
+		
+		if (toMins(raw) < 5)
+		{
+			if (toMins(raw) == 1) { return toMins(raw) + " minute " + toSecs(raw) + " seconds"; }
+			else { return toMins(raw) + " minutes " + toSecs(raw) + " seconds"; }
+		}
 	}
 	else if (toHrs(raw) == 1)
 	{
@@ -330,6 +327,8 @@ function rawToString(raw)
 	}
 
 }
+
+
 
 setInterval(loadTime, 500);
 setInterval(loadDate, 2000);
