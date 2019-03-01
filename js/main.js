@@ -306,7 +306,8 @@ function rawToString(raw)
 		if (toSecs(raw) == 1) { return toSecs(raw) + " second"; }
 		else { return toSecs(raw) + " seconds"; }
 	}
-	if (toMins(raw) <= 5)
+	
+	if (toMins(raw) < 5)
 		{
 		if (toMins(raw) == 1) { return toMins(raw) + " minute " + toSecs(raw) + " seconds"; }
 		else { return toMins(raw) + " minutes " + toSecs(raw) + " seconds"; }
@@ -332,5 +333,5 @@ function rawToString(raw)
 
 setInterval(loadTime, 500);
 setInterval(loadDate, 2000);
-setInterval(updateD, 1000);
-setInterval(update, 1000);
+setInterval(updateD, 500);
+setInterval(update, 500);
