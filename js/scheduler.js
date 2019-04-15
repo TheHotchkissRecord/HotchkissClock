@@ -13,7 +13,7 @@ function addCookie(cookname)
 
 function bakeCookies(recipe)
 {
-	addCookie(recipe + "=\"" + document.getElementById(recipe).value + "\"");
+	addCookie(recipe + "=\"" + document.getElementById(recipe).value + "\";domain=thehotchkissrecord.github.io;max-age=31536000");
 }
 
 function putCookie()
