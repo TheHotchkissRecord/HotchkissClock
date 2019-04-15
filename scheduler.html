@@ -27,12 +27,12 @@
 	
 	function cookiesAlert()
 	{
-		window.alert("Welcome to the scheduler! In order to use this service you will need cookies enabled. - Nicholas Lorentzen")
+		window.alert("(STILL IN TESTING) Welcome to the scheduler! In order to use this service you will need cookies enabled. - Nicholas Lorentzen")
 	}
   </script>
 </head>
 <body onLoad="cookiesAlert();">
-<form>
+<form onsubmit="return putCookie();" class="my-form">
 	<table style="width:100">
 	  <tr>
 		<th>Scheduler</th>
@@ -216,8 +216,7 @@
 		</td>
 	  </tr>
 	</table>
-	
-	<input type="button" value="Enter Schedule" id="submit" onclick="putCookie()">
+	<input type="submit" value="Submit">
 </form>
 </body>
 </html>
