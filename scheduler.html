@@ -12,7 +12,7 @@
 	
 	function bakeCookies(recipe)
 	{
-		addCookie(recipe + "=" + document.getElementById(recipe).value);
+		addCookie(recipe + "=\"" + document.getElementById(recipe).value + "\"");
 	}
 	
 	function putCookie()
