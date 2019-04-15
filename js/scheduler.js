@@ -25,7 +25,8 @@ function putCookie()
 	return true;
 }
 
-function exitScheduler(){
+function exitScheduler()
+{
 	putCookie();
 	alert("Cookies Set:" + document.cookie);
 	window.location.replace("https://thehotchkissrecord.github.io/HotchkissClock/");
