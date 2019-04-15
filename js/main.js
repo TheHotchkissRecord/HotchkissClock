@@ -190,7 +190,7 @@ function getSchedule()
 	// Assigns class schedules for weekday scenarios
 	if (weekday == 1 || weekday == 4)
 	{
-		currentSchedule[0] = new period(((getCookie("m1")) ? getCookie("m1") : "Period 1") + getCookie("m1"), 8, 30, 9, 15);
+		currentSchedule[0] = new period(((getCookie("m1")) ? getCookie("m1") : "Period 1"), 8, 30, 9, 15);
 		currentSchedule[1] = new period("Passing Period", 9, 15, 9, 20);
 		currentSchedule[2] = new period("Period 2", 9, 20, 10, 5);
 		currentSchedule[3] = new period("Passing Period", 10, 5, 10, 10);
