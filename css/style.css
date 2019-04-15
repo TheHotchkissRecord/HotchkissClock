@@ -71,3 +71,15 @@ body {
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }
+h1{
+	position: fixed;
+	top: 5px;
+	left: 5px;
+	font-family: 'Lato', sans-serif;
+	color: cornsilk;
+	font-size: 12px;
+}
+
+a{
+	color: #FFFFFF;
+}

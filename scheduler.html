@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scheduler for Hotchkiss Clock</title>
+<script>
+  function setCookie(name, value)
+  {
+    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }
+function putCookie(form)
+                //this should set the UserName cookie to the proper value;
+  {
+   setCookie("userName", form[0].usrname.value);
+
+    return true;
+  }
+
+  </script>
+</head>
+<body>
+<table style="width:100">
+  
+      <form>
+  
+  <tr>
+    <th>Scheduler</th>
+    <th>Monday</th>
+    <th>Tuesday</th>
+    <th>Wednesday</th>
+    <th>Thursday</th>
+    <th>Friday</th>
+    <th>Saturday</th>
+  </tr>
+  <tr>
+    <td>Period 1</td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+  </tr>
+  <tr>
+    <td>Period 2</td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Period 3</td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Period 4</td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Period 5A</td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      
+    </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td>Period 5B</td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>Period 6</td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      
+    </td>
+  </tr>
+  <tr>
+    <td>Period 7</td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      <input type="text" id="nameBox" name='usrname'>
+    </td>
+    <td>
+      
+    </td>
+  </tr>
+</table>
+<input type="button" value="Go!" id="submit" onclick="putCookie(document.getElementsByTagName('form'));">
+</form>
+</body>
+</html>
