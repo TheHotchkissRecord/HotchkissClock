@@ -13,7 +13,7 @@ function addCookie(cookname)
 
 function bakeCookies(recipe)
 {
-	addCookie(recipe + "=" + document.getElementById(recipe).value);
+	addCookie(recipe + "=" + escape(document.getElementById(recipe).value);
 }
 
 function putCookie()
