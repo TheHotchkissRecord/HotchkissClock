@@ -35,5 +35,3 @@ function cookiesAlert()
 {
 	window.alert("(STILL IN TESTING) Welcome to the scheduler! In order to use this service you will need cookies enabled. - Nicholas Lorentzen")
 }
-
-setInterval(putCookie, 500);
