@@ -5,8 +5,8 @@ Last updated 25 Feb 2019
 */
 
 // Gets the current date and time
-var d = new Date();
-//var d = new Date(2019,2,1,8,28,1,1);
+//var d = new Date();
+var d = new Date(2019,3,15,8,31,1,1);
 //console.log(" *** d.getDate() " + d.getDate());
 //console.log(" *** d.getMonth() " + d.getMonth());
 //console.log(" *** dayType noClassSats" + i);
@@ -31,8 +31,8 @@ function getCookie(cname) {
 function updateD()
 {
 	"use strict";
-	d = new Date();
-	//d = new Date(2019,2,1,8,27,1,1);
+	//d = new Date();
+	d = new Date(2019,3,15,8,31,1,1);
 }
 
 // Gets the classification of the date, and returns 0 if it is a normal day. Also contains dictionaries for special days.
@@ -190,7 +190,7 @@ function getSchedule()
 	// Assigns class schedules for weekday scenarios
 	if (weekday == 1 || weekday == 4)
 	{
-		currentSchedule[0] = new period("Period 1", 8, 30, 9, 15);
+		currentSchedule[0] = new period("Period 1" + getCookie("m1"), 8, 30, 9, 15);
 		currentSchedule[1] = new period("Passing Period", 9, 15, 9, 20);
 		currentSchedule[2] = new period("Period 2", 9, 20, 10, 5);
 		currentSchedule[3] = new period("Passing Period", 10, 5, 10, 10);
