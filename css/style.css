@@ -71,7 +71,7 @@ body {
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }
-h1{
+#scheduler{
 	position: fixed;
 	top: 5px;
 	left: 5px;
@@ -82,4 +82,13 @@ h1{
 
 a{
 	color: #FFFFFF;
+}
+table, th, td {
+  border: 1px solid white;
+  color: rgba(255,255,255,1.00);
+  padding: 5px;
+  font-family: lato, sans-serif;
+}
+table {
+	border-collapse: collapse;
 }

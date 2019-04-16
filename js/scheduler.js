@@ -30,7 +30,7 @@ function putCookie()
 function exitScheduler()
 {
 	putCookie();
-	alert("Cookies Set:" + document.cookie);
+	alert("Cookies Set:" + unescape(document.cookie));
 	window.location.replace("https://thehotchkissrecord.github.io/HotchkissClock/");
 }
 
@@ -61,4 +61,10 @@ function getCookie(cname) {
     }
   }
   return "";
+}
+
+function updateScheduler()
+{
+	document.cookie = escape(document.getElementById(pasteCode).value);
+	alert("Schedule Updated");
 }
