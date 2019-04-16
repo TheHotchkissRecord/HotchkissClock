@@ -65,6 +65,6 @@ function getCookie(cname) {
 
 function updateScheduler()
 {
-	document.cookie = escape(document.getElementById(pasteCode).value);
+	document.cookie = escape(document.getElementById("pasteCode").value + ";domain=thehotchkissrecord.github.io;max-age=31536000");
 	alert("Schedule Updated");
 }
