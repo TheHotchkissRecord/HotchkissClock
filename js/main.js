@@ -6,7 +6,7 @@ Last updated 25 Feb 2019
 
 // Gets the current date and time
 //var d = new Date();
-var d = new Date(2019,3,15,8,31,1,1);
+var d = new Date(2019,3,15,9,31,1,1);
 //console.log(" *** d.getDate() " + d.getDate());
 //console.log(" *** d.getMonth() " + d.getMonth());
 //console.log(" *** dayType noClassSats" + i);
@@ -32,7 +32,7 @@ function updateD()
 {
 	"use strict";
 	//d = new Date();
-	d = new Date(2019,3,15,8,31,1,1);
+	d = new Date(2019,3,15,9,31,1,1);
 }
 
 // Gets the classification of the date, and returns 0 if it is a normal day. Also contains dictionaries for special days.
@@ -188,24 +188,45 @@ function getSchedule()
 	var currentSchedule = new Array();
 
 	// Assigns class schedules for weekday scenarios
-	if (weekday == 1 || weekday == 4)
+	if (weekday == 1)
 	{
 		currentSchedule[0] = new period(((getCookie("m1")) ? getCookie("m1") : "Period 1"), 8, 30, 9, 15);
 		currentSchedule[1] = new period("Passing Period", 9, 15, 9, 20);
-		currentSchedule[2] = new period("Period 2", 9, 20, 10, 5);
+		currentSchedule[2] = new period(((getCookie("m2")) ? getCookie("m2") : "Period 2"), 9, 20, 10, 5);
 		currentSchedule[3] = new period("Passing Period", 10, 5, 10, 10);
 		currentSchedule[4] = new period("Chapel / Class Meeting", 10, 10, 10, 35);
 		currentSchedule[5] = new period("Passing Period", 10, 35, 10, 40);
-		currentSchedule[6] = new period("Period 3", 10, 40, 11, 20);
+		currentSchedule[6] = new period(((getCookie("m3")) ? getCookie("m3") : "Period 3"), 10, 40, 11, 20);
 		currentSchedule[7] = new period("Passing Period", 11, 20, 11, 25);
-		currentSchedule[8] = new period("Period 4", 11, 25, 12, 5);
+		currentSchedule[8] = new period(((getCookie("m4")) ? getCookie("m4") : "Period 4"), 11, 25, 12, 5);
 		currentSchedule[9] = new period("Passing Period", 12, 5, 12, 10);
-		currentSchedule[10] = new period("Period 5A", 12, 10, 12, 55);
-		currentSchedule[11] = new period("Period 5B", 12, 55, 13, 40);
+		currentSchedule[10] = new period(((getCookie("m5")) ? getCookie("m5") : "Period 5A"), 12, 10, 12, 55);
+		currentSchedule[11] = new period(((getCookie("m6")) ? getCookie("m6") : "Period 5B"), 12, 55, 13, 40);
 		currentSchedule[12] = new period("Passing Period", 13, 40, 13, 45);
-		currentSchedule[13] = new period("Period 6", 13, 45, 14, 30);
+		currentSchedule[13] = new period(((getCookie("m7")) ? getCookie("m7") : "Period 6"), 13, 45, 14, 30);
 		currentSchedule[14] = new period("Passing Period", 14, 30, 14, 35);
-		currentSchedule[15] = new period("Period 7", 14, 35, 15, 20);
+		currentSchedule[15] = new period(((getCookie("m8")) ? getCookie("m8") : "Period 7"), 14, 35, 15, 20);
+		currentSchedule[16] = new period("end of school", 15, 20, 15, 20);
+		currentSchedule[17] = new period("end of school", 15, 20, 15, 20);
+	}
+	else if (weekday == 4)
+	{
+		currentSchedule[0] = new period(((getCookie("y1")) ? getCookie("y1") : "Period 1"), 8, 30, 9, 15);
+		currentSchedule[1] = new period("Passing Period", 9, 15, 9, 20);
+		currentSchedule[2] = new period(((getCookie("y2")) ? getCookie("y2") : "Period 2"), 9, 20, 10, 5);
+		currentSchedule[3] = new period("Passing Period", 10, 5, 10, 10);
+		currentSchedule[4] = new period("Chapel / Class Meeting", 10, 10, 10, 35);
+		currentSchedule[5] = new period("Passing Period", 10, 35, 10, 40);
+		currentSchedule[6] = new period(((getCookie("y3")) ? getCookie("y3") : "Period 3"), 10, 40, 11, 20);
+		currentSchedule[7] = new period("Passing Period", 11, 20, 11, 25);
+		currentSchedule[8] = new period(((getCookie("y4")) ? getCookie("y4") : "Period 4"), 11, 25, 12, 5);
+		currentSchedule[9] = new period("Passing Period", 12, 5, 12, 10);
+		currentSchedule[10] = new period(((getCookie("y5")) ? getCookie("y5") : "Period 5A"), 12, 10, 12, 55);
+		currentSchedule[11] = new period(((getCookie("y6")) ? getCookie("y6") : "Period 5B"), 12, 55, 13, 40);
+		currentSchedule[12] = new period("Passing Period", 13, 40, 13, 45);
+		currentSchedule[13] = new period(((getCookie("y7")) ? getCookie("y7") : "Period 6"), 13, 45, 14, 30);
+		currentSchedule[14] = new period("Passing Period", 14, 30, 14, 35);
+		currentSchedule[15] = new period(((getCookie("y8")) ? getCookie("y8") : "Period 7"), 14, 35, 15, 20);
 		currentSchedule[16] = new period("end of school", 15, 20, 15, 20);
 		currentSchedule[17] = new period("end of school", 15, 20, 15, 20);
 	}
