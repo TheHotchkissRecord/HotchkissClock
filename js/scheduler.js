@@ -9,6 +9,7 @@ var boiyardee = [];
 function addCookie(cookname)
 {
 	boiyardee.push(cookname);
+	document.cookie = cookname + ";domain=thehotchkissrecord.github.io;max-age=31536000";
 }
 
 function bakeCookies(recipe)
