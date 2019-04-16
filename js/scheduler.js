@@ -30,7 +30,7 @@ function putCookie()
 function exitScheduler()
 {
 	putCookie();
-	alert("Cookies Set:" + unescape(document.cookie));
+	alert("Cookies Set (Copy this for another browser): " + unescape(document.cookie));
 	window.location.replace("https://thehotchkissrecord.github.io/HotchkissClock/");
 }
 
@@ -66,5 +66,5 @@ function getCookie(cname) {
 function updateScheduler()
 {
 	document.cookie = escape(document.getElementById("pasteCode").value + ";domain=thehotchkissrecord.github.io;max-age=31536000");
-	alert("Schedule Updated");
+	alert(document.cookie);
 }
