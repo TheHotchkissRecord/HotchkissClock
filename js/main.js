@@ -387,6 +387,13 @@ function rawToString(raw)
 	}
 }
 
+function loadprotocol() 
+{
+Notification.requestPermission().then(function(result) {
+  console.log(result);
+});
+}
+
 setInterval(loadTime, 500);
 setInterval(loadDate, 2000);
 setInterval(updateD, 500);
